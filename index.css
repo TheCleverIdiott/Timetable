@@ -1,0 +1,105 @@
+#collapsing_header {
+	position: relative;
+	z-index: 10;
+    padding: var(--space-0);
+    padding-bottom: 0;
+    background: #FFF;
+    border-bottom: 1px solid #FFF;
+}
+#collapsing_header > a {
+	float:right;
+}
+#collapsing_header > a > button {
+	height: var(--space-5);
+	width: var(--space-5);
+}
+
+
+
+header {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+	grid-template-rows: 1fr;
+	justify-items: center;
+}
+header > button {
+	width: var(--space-5);
+	height: var(--space-5);
+	border-bottom: 2px solid #FFF;
+	color: #777;
+	border-radius: 0;
+}
+header > button.open {
+	color: #000;
+	border-color: #000;
+}
+header > button:active {
+	color: #555;
+	background-color: #EEE;
+}
+
+
+
+
+
+
+
+
+
+
+#timetable {
+	display: grid;
+	grid-template-columns: var(--space-6) 1fr;
+	grid-template-rows: 1fr;
+	grid-gap: var(--space--1);
+	padding: var(--space--1);
+}
+
+
+
+
+
+#periods_container > .period {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: var(--space-5);
+	text-align: center;
+	color: #555;
+}
+#periods_container > .period > span {
+	display: block;
+	font-size: var(--space--1);
+}
+
+
+
+
+
+#subjects_container > .subject {
+	height: var(--space-5);
+	line-height: var(--space-5);
+	padding: 0 var(--space-0) 0 var(--space-0);
+	box-sizing: border-box;
+	font-size: var(--space-0);
+	transition: opacity 0.15s, transform 0.15s;
+	border-radius: 5px;
+	background-color: #FFF;
+}
+#subjects_container > * + .subject, #periods_container > * + .period {
+	margin-top: var(--space--1);
+}
+
+.subject.empty {
+	visibility: hidden;
+}
+
+.subject.hidden {
+	opacity: 0;
+	transform: translateY(10px);
+}
+
+#subjects_container > .subject > span:nth-of-type(2) {
+	float: right;
+	font-size: var(--space--1);
+}
